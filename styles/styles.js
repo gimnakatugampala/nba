@@ -3,11 +3,13 @@ import { StyleSheet} from 'react-native'
 
 const globalStyles = StyleSheet.create({
     cardContainer:{
-        margin:20
+        marginTop:20,
+        marginBottom:20
     },
     newsTitle:{
         fontSize:25,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        margin:10
     },  
     card:{
         padding:20,
