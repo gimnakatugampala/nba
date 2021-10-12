@@ -1,16 +1,16 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View  } from 'react-native'
+
+
 
 import Header from '../components/Header'
 import NbaNews from '../components/NbaNews'
 import News from '../components/News'
 import Navbar from '../components/Navbar'
 
-export default function Home() {
+export default function Home({navigation}) {
     return (
         <View >
-            {/* Header */}
-            <Header />
 
             {/* NBA News */}
             <NbaNews />
@@ -19,12 +19,10 @@ export default function Home() {
             <News />
 
             {/* Navbar */}
-            <Navbar />
+            <Navbar navigation={navigation} />
 
         </View>
     )
 }
 
-const styles = StyleSheet.create({
-
-})
+const styles = StyleSheet.create({})

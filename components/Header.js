@@ -12,16 +12,15 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     headerContainer:{
-        marginTop:20,
         backgroundColor:'#0054a4',
         display:'flex',
         flexDirection:'row',
-        borderRadius:5
+        borderRadius:5,
     },
     images:{
         width:100,
         height:50,
-        margin:6,
+        margin:2,
         borderRadius:50
     },
     headerText:{
