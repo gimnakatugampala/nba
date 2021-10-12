@@ -10,11 +10,23 @@ const globalStyles = StyleSheet.create({
         fontWeight:'bold'
     },  
     card:{
-        padding:10,
+        padding:20,
         margin:20,
         borderRadius:20,
         shadowColor: "#000",
         elevation: 3,
+    },
+    cardHeader:{
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'row'
+    },
+    cardContent:{
+        fontWeight:'bold',
+        fontSize:15
+    },
+    cardDate:{
+        color:'	rgb(200,200,200)'
     }
 })
 
