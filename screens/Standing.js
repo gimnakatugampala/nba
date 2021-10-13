@@ -9,19 +9,20 @@ import Header from '../components/Header'
 
 export default function Standing() {
 
+    const [standings, setstandings] = useState([])
 
-    // Standingapi()
-    //     .then(data => console.log(data))
+
+    Standingapi()
+        .then(data => setstandings(data))
 
     return (
-        <View >
+        <View>
         <StatusBar barStyle="light-content" backgroundColor="#0054a4" />
 
         <Header />
 
-        <ScrollView horizontal>
-
         {/* Table */}
+        <ScrollView horizontal>
         <DataTable>
         <DataTable.Header style={styles.databeHeader}>
           <DataTable.Title style={styles.Title}>TEAM</DataTable.Title>
@@ -33,56 +34,27 @@ export default function Standing() {
           <DataTable.Title numeric style={styles.Title}>DIV</DataTable.Title>
           <DataTable.Title numeric style={styles.Title}>HOME</DataTable.Title>
           <DataTable.Title numeric style={styles.Title}>ROAD</DataTable.Title>
-          <DataTable.Title numeric style={styles.Title}>OT</DataTable.Title>
           <DataTable.Title style={styles.Title}>LAST 10</DataTable.Title>
           <DataTable.Title numeric style={styles.Title}>STREAK</DataTable.Title>
         </DataTable.Header>
+    
+        {standings&& standings.map((standing,index) =>(
+            <DataTable.Row style={styles.databeBox} key={index} >
+            <DataTable.Cell>{standing.Key}</DataTable.Cell>
+            <DataTable.Cell>{standing.Wins}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.Losses}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.Percentage}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.GamesBack}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.ConferenceWins} - {standing.ConferenceLosses}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.DivisionWins} - {standing.DivisionLosses}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.HomeWins} - {standing.HomeLosses}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.AwayWins} - {standing.AwayLosses}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.LastTenWins} - {standing.LastTenLosses}</DataTable.Cell>
+            <DataTable.Cell numeric>{standing.StreakDescription}</DataTable.Cell>
+          </DataTable.Row>
 
-        <DataTable.Row style={styles.databeBox} >
-          <DataTable.Cell>John</DataTable.Cell>
-          <DataTable.Cell>john@kindacode.com</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
-
-        <DataTable.Row style={styles.databeBox} >
-        <DataTable.Cell>John</DataTable.Cell>
-          <DataTable.Cell>john@kindacode.com</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
-
-        <DataTable.Row style={styles.databeBox} >
-        <DataTable.Cell>John</DataTable.Cell>
-          <DataTable.Cell>john@kindacode.com</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-          <DataTable.Cell numeric>33</DataTable.Cell>
-        </DataTable.Row>
-
+        ))}
+        
       </DataTable>
       </ScrollView>
 
@@ -91,11 +63,12 @@ export default function Standing() {
 }
 
 const styles = StyleSheet.create({
+ 
     Title:{
         margin:10
     },
     databeHeader:{
-        margin: 10,
+        margin: 5,
         textAlign: 'left',
     },
     databeBox:{
