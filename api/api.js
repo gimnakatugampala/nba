@@ -8,7 +8,7 @@ export const NewsNBAapi = async () =>{
 
 // News
 export const Newsapi = async () =>{
-            const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=655539e018044f9382f8120b165d1e3c`)
+            const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=582d2cd0a6a54c83b45858d4d3088a1e`)
         
             return res.json()
         

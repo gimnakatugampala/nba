@@ -9,10 +9,10 @@ import NbaNews from '../components/NbaNews'
 import News from '../components/News'
 import Header  from '../components/Header'
 
-export default function Home({navigation}) {
+export default function Home() {
 
     const [newsNBA, setnewsNBA] = useState([])
-    const [news, setnews] = useState(null)
+    const [news, setnews] = useState([])
 
         useEffect(() => {
             NewsNBAapi()
@@ -21,9 +21,9 @@ export default function Home({navigation}) {
             })
 
             Newsapi()
-            .then(data => setnews(data))
+            .then(data => setnews(data.articles))
 
-        }, [newsNBA,news])
+        }, [newsNBA,news,setnews,setnewsNBA])
 
 
 
@@ -38,7 +38,7 @@ export default function Home({navigation}) {
             
 
             {/* News */}
-            {/* {news? <News news={news} /> : <Image source={require('../assets/loading.gif')}  />} */}
+            {news && <News news={news} /> }
             
 
 
