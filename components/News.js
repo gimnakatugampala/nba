@@ -4,7 +4,7 @@ import globalStyles from '../styles/styles'
 
 export default function News({news}) {
 
-    console.log(news)
+    // console.log(news)
 
     return (
         <View style={globalStyles.cardContainer}>
