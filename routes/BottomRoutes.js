@@ -18,6 +18,7 @@ function BottomRoutes() {
         initialRouteName="Home"
         activeColor="white"
         inactiveColor="white"
+        barStyle={{ backgroundColor: '#0054a4' }}
         
     >
       <Tab.Screen name="Home" component={Home}
