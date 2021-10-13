@@ -1,11 +1,17 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export default function Standing({}) {
+
+import Navbar from '../components/Navbar'
+
+export default function Standing({navigation}) {
     return (
-        <View>
-            <Text>Standing..</Text>
-        </View>
+        <View >
+
+        {/* Navbar */}
+        <Navbar navigation={navigation} />
+
+    </View>
     )
 }
 

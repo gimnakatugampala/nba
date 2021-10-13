@@ -17,7 +17,7 @@ export default function Navbar({navigation}) {
             <Text style={styles.navbarInside}>Standing</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navbarText}>
+        <TouchableOpacity style={styles.navbarText} onPress={() => navigation.navigate('Players')}>
             <Icon name="user" size={15} color="#fff" style={styles.icons} />
             <Text style={styles.navbarInside}>Player</Text>
         </TouchableOpacity>
