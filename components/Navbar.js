@@ -22,7 +22,7 @@ export default function Navbar({navigation}) {
             <Text style={styles.navbarInside}>Player</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navbarText}>
+        <TouchableOpacity style={styles.navbarText} onPress={() => navigation.navigate('Teams')}>
             <Icon name="users" size={15} color="#fff" style={styles.icons} />
             <Text style={styles.navbarInside}>Team</Text>
         </TouchableOpacity>

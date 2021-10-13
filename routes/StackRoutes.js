@@ -8,6 +8,7 @@ import Standing from '../screens/Standing';
 
 import Header from '../components/Header';
 import Players from '../screens/Players';
+import Teams from '../screens/Teams';
 
 
 const Stack = createNativeStackNavigator();
@@ -38,6 +39,15 @@ const StackRoutes = () => {
         />
 
         <Stack.Screen name="Players" component={Players}
+           options={{ 
+            headerStyle: {
+              backgroundColor: '#0054a4'
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+
+      <Stack.Screen name="Teams" component={Teams}
            options={{ 
             headerStyle: {
               backgroundColor: '#0054a4'
