@@ -21,6 +21,8 @@ export default function Standing() {
 
         <Header />
 
+        <Text style={styles.StandingTitle}>NBA 2020 - 2021 Regular Season Standing</Text>
+
         {/* Table */}
         <ScrollView horizontal>
         <DataTable>
@@ -66,6 +68,11 @@ const styles = StyleSheet.create({
  
     Title:{
         margin:10
+    },
+    StandingTitle:{
+        padding:10,
+        fontSize:15,
+        fontWeight:'bold'
     },
     databeHeader:{
         margin: 5,
