@@ -27,7 +27,7 @@ export default function Navbar({navigation}) {
             <Text style={styles.navbarInside}>Team</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navbarText}>
+        <TouchableOpacity style={styles.navbarText} onPress={() => navigation.navigate('Stats')}>
             <Icon name="area-chart" size={15} color="#fff" style={styles.icons} />
             <Text style={styles.navbarInside}>Stats</Text>
         </TouchableOpacity>
