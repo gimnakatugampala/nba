@@ -13,7 +13,7 @@ export default function News({news}) {
                 news.map((newss,index) => (
                     <View style={globalStyles.card} key={index}>
                     <View style={globalStyles.cardHeader}>
-                        <Text>{newss.author}</Text>
+                        <Text>TEAM</Text>
                         <Text>Author</Text>
                     </View>
                     <Text style={globalStyles.cardContent}>lorem lorem loremlorem</Text>

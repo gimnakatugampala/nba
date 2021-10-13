@@ -7,7 +7,7 @@ import {NewsNBAapi , Newsapi} from '../api/api'
 
 import NbaNews from '../components/NbaNews'
 import News from '../components/News'
-import Navbar from '../components/Navbar'
+import Header  from '../components/Header'
 
 export default function Home({navigation}) {
 
@@ -21,15 +21,17 @@ export default function Home({navigation}) {
             })
 
             Newsapi()
-            .then(data => console.log(data))
+            .then(data => setnews(data))
 
-        }, [newsNBA])
+        }, [newsNBA,news])
 
 
 
     return (
         <View >
              <StatusBar barStyle="light-content" backgroundColor="#0054a4" />
+
+             <Header />
 
             {/* NBA News */}
             {newsNBA? <NbaNews newsNBA={newsNBA} /> : <Image source={require('../assets/loading.gif')}  /> }
@@ -39,8 +41,6 @@ export default function Home({navigation}) {
             {/* {news? <News news={news} /> : <Image source={require('../assets/loading.gif')}  />} */}
             
 
-            {/* Navbar */}
-            {/* <Navbar navigation={navigation} /> */}
 
         </View>
     )

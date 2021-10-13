@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
         backgroundColor:'#0054a4',
         display:'flex',
         flexDirection:'row',
-        borderRadius:5,
+        borderBottomLeftRadius:4,
+        borderBottomRightRadius:4,
     },
     images:{
         width:100,

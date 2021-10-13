@@ -12,7 +12,6 @@ import BottomRoutes from './routes/BottomRoutes';
 export default function App() {
   return (
     <>
-   <StackRoutes />
    <BottomRoutes />
    </>
   );
