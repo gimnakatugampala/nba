@@ -4,7 +4,7 @@ import { StyleSheet} from 'react-native'
 const globalStyles = StyleSheet.create({
     cardContainer:{
         marginTop:20,
-        marginBottom:20
+        marginBottom:50
     },
     newsTitle:{
         fontSize:25,

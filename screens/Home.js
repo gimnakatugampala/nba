@@ -40,7 +40,7 @@ export default function Home() {
             
 
             {/* News */}
-            {news && <News news={news} /> }
+            {news && <News news={news}  /> }
             
 
 
@@ -48,4 +48,5 @@ export default function Home() {
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+})

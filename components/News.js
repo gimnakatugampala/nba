@@ -15,15 +15,9 @@ export default function News({news}) {
             {
                 news.map((newss,index) => (
                     <View style={globalStyles.card} key={index}>
-                        <Image
-                        style={styles.tinyLogo}
-                        source={{
-                        uri: 'https://reactnative.dev/img/tiny_logo.png',
-                        }}
-                    />
                     <View style={globalStyles.cardHeader}>
-                        <Text>TEAM</Text>
-                        <Text>Author</Text>
+                        <Text>{newss.source.name}</Text>
+                        <Text>{newss.author}</Text>
                     </View>
                     <Text style={globalStyles.cardContent}>{newss.title}</Text>
                     <Text style={globalStyles.cardDate}>{newss.publishedAt}</Text>
@@ -38,4 +32,9 @@ export default function News({news}) {
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    tinyLogo:{
+        width:'100%',
+        height:100,
+    }
+})

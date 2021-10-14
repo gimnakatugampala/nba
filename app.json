@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "nbaapp",
+    "name": "NBA",
     "slug": "nbaapp",
+    "description":"NBA Details App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#0054a4"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,9 +21,11 @@
       "supportsTablet": true
     },
     "android": {
+      "package":"nba.gimna.lk",
+      "versionCode":1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0054a4"
       }
     },
     "web": {
