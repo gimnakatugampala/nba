@@ -4,6 +4,8 @@ import { StyleSheet, Text, View ,StatusBar ,ScrollView ,Image } from 'react-nati
 import {playersapi} from '../api/api'
 
 import Header from '../components/Header'
+import globalStyles from '../styles/styles'
+
 
 export default function Players() {
 
@@ -21,7 +23,7 @@ export default function Players() {
             {/* Header */}
             <Header />
             <ScrollView>
-            {players&&players.map((player,index) =>(        
+            {players.length === 0 ? <Image style={globalStyles.loader} source={require('../assets/loading.gif')}  /> :players.map((player,index) =>(        
                 <View style={styles.databeBox} key={index}>
                
                 <Image style={styles.tinyLogo} source={{ uri: player.PhotoUrl,}}/>
@@ -29,7 +31,7 @@ export default function Players() {
                 <Text style={styles.playerContainer}>Team : {player.Team}</Text>
                 <Text style={styles.playerContainer}>Position : {player.Position}</Text>
                 <Text numeric style={styles.playerContainer}>Experience : {player.Experience}</Text>
-                <Text numeric style={styles.playerContainer}>Salaries : {player.Salary}</Text>
+                <Text numeric style={styles.playerContainer}>Salary : {player.Salary}</Text>
                 <Text numeric style={styles.playerContainer}>Height : {player.Height}</Text>
                 <Text numeric style={styles.playerContainer}>Weight : {player.Weight}</Text>
             
@@ -47,7 +49,9 @@ const styles = StyleSheet.create({
          borderRadius:50,
          padding:10,
          justifyContent:'center',
-         alignItems:'center'
+         alignItems:'center',
+         shadowColor: "#000",
+         elevation: 3,
     },
     playerContainer:{
         color:'#fff'

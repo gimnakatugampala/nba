@@ -29,6 +29,17 @@ const globalStyles = StyleSheet.create({
     },
     cardDate:{
         color:'	rgb(200,200,200)'
+    },
+    loader:{
+        margin:20,
+        marginTop:100,
+        marginLeft:70
+    },
+    container:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        
     }
 })
 

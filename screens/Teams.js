@@ -6,6 +6,8 @@ import { SvgUri } from 'react-native-svg';
 
 import {teamsapi} from '../api/api'
 
+import globalStyles from '../styles/styles'
+
 export default function Teams() {
 
     const [teams, setteams] = useState([])
@@ -21,7 +23,7 @@ export default function Teams() {
              <Header />
              <ScrollView>
                  <View style={styles.grid}>
-                {teams&&teams.map((team,index) => (
+                {teams.length === 0 ? <Image style={globalStyles.loader} source={require('../assets/loading.gif')}  /> : teams.map((team,index) => (
                      <View style={styles.gridItem} key={index}>
                       <SvgUri
                     width="60%"

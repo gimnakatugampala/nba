@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View ,StatusBar,ScrollView } from 'react-native'
+import { StyleSheet, Text, View ,StatusBar,ScrollView , Image} from 'react-native'
 import { DataTable } from 'react-native-paper';
 
 import {Standingapi} from '../api/api'
 
 
 import Header from '../components/Header'
+
+import globalStyles from '../styles/styles'
 
 export default function Standing() {
 
@@ -40,7 +42,7 @@ export default function Standing() {
           <DataTable.Title numeric style={styles.Title}>STREAK</DataTable.Title>
         </DataTable.Header>
     
-        {standings&& standings.map((standing,index) =>(
+        {standings.length === 0 ? <Image style={globalStyles.loader} source={require('../assets/loading.gif')}  />  : standings.map((standing,index) =>(
             <DataTable.Row style={styles.databeBox} key={index} >
             <DataTable.Cell>{standing.Key}</DataTable.Cell>
             <DataTable.Cell>{standing.Wins}</DataTable.Cell>

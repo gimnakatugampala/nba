@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View ,StatusBar,ScrollView } from 'react-native'
+import { StyleSheet, Text, View ,StatusBar,ScrollView ,Image} from 'react-native'
 
 import Header from '../components/Header'
 
 import {statsapi} from '../api/api'
+import globalStyles from '../styles/styles'
 
 export default function Stats() {
 
@@ -20,7 +21,7 @@ export default function Stats() {
 
              <ScrollView>
              <View style={styles.grid} >
-             {stats&&stats.map((stat,index) => (
+             {stats.length === 0 ? <Image style={globalStyles.loader} source={require('../assets/loading.gif')}  /> : stats.map((stat,index) => (
              <View style={styles.gridItems} key={index}>
                  <Text style={styles.title}>{stat.Name} ({stat.Team})</Text>
                  <Text style={styles.game}>Games {stat.Games}</Text>

@@ -8,6 +8,7 @@ import {NewsNBAapi , Newsapi} from '../api/api'
 import NbaNews from '../components/NbaNews'
 import News from '../components/News'
 import Header  from '../components/Header'
+import globalStyles from '../styles/styles'
 
 export default function Home() {
 
@@ -32,9 +33,10 @@ export default function Home() {
              <StatusBar barStyle="light-content" backgroundColor="#0054a4" />
 
              <Header />
+              
 
             {/* NBA News */}
-            {newsNBA? <NbaNews newsNBA={newsNBA} /> : <Image source={require('../assets/loading.gif')}  /> }
+            {newsNBA.length === 0 ? <Image style={globalStyles.loader} source={require('../assets/loading.gif')}  /> : <NbaNews newsNBA={newsNBA} />  }
             
 
             {/* News */}
