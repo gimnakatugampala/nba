@@ -37,3 +37,11 @@ export const Newsapi = async () =>{
     return res.json()
 
 }
+
+  // All Stats
+  export const statsapi = async () =>{
+    const res = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/TeamSeasonStats/2021?key=eb15a81d002e42e6b4ef18a173c0f441`)
+
+    return res.json()
+
+}

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     databeBox:{
         margin: 20,
          textAlign: 'center',
-         backgroundColor:'#83CBEB',
+         backgroundColor:'#0054a4',
          borderRadius:50,
          padding:10,
          justifyContent:'center',
