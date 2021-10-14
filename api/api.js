@@ -21,3 +21,11 @@ export const Newsapi = async () =>{
       return res.json()
   
   }
+
+  // All Players
+  export const playersapi = async () =>{
+    const res = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/Players?key=eb15a81d002e42e6b4ef18a173c0f441`)
+
+    return res.json()
+
+}
