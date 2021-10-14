@@ -29,3 +29,11 @@ export const Newsapi = async () =>{
     return res.json()
 
 }
+
+  // All Teams
+  export const teamsapi = async () =>{
+    const res = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/teams?key=eb15a81d002e42e6b4ef18a173c0f441`)
+
+    return res.json()
+
+}
